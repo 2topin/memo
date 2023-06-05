@@ -24,6 +24,7 @@ public class Main {
 
             switch (num) {
                 case 1 :
+
                     String name = sc.nextLine().trim();
                     System.out.print("\n이름 : ");
 
