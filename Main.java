@@ -46,6 +46,9 @@ public class Main {
                 case 3:
                     break;
                 case 4:
+                    System.out.println("삭제할 번호를 입력하세요");
+                    int deleteNum = sc.nextInt();
+                    input.deleteText(deleteNum);
                     break;
                 case 5:
                     System.out.println("종료합니다.\n");
