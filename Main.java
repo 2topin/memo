@@ -1,34 +1,21 @@
 package memo;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        public static void deleteMemo() {
-            System.out.println("삭제할 글 번호를 입력하세요 : ");
-            int deleteIndex = scanner.nextInt();
-
-            if (deleteIndex >=0 && deleteIndex < memos.size()) {
-                System.out.println("비밀번호를 입력하세요.");
-                String password = scanner.nextLine();
-
-                if (deleteIndex < passwords.size() && password.equals(passwords.get(deleteIndex))) {
-                    memos.remove(deleteIndex);
-                    passwords.remove(deleteIndex);
-                    System.out.println("글이 삭제되었습니다.");
-                } else if (!password.equals(passwords.get(deleteIndex))) {
-                    System.out.println("비밀번호가 일치하지 않습니다. 글을 삭제할 수 없습니다.");
-                } else {
-                    System.out.println("해당번호의 글이 존재하지 않습니다.");
-                }
-            }
-        int textNum = 1;
+        Input input = new Input();
+        int textNum = 0;
         boolean start = true;
 
+        LocalDateTime now = LocalDateTime.now();
+        String formatedNow = now.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 HH시 mm분 ss초"));
+        System.out.println(formatedNow);
+
         while (start) {
-            Input input = new Input();
             Scanner sc = new Scanner(System.in);
 
             System.out.println("[ 메모장 ]");
@@ -37,38 +24,33 @@ public class Main {
             System.out.println("3. 글 수정");
             System.out.println("4. 글 삭제");
             System.out.println("5. 종료\n");
-
             System.out.print("입력 : ");
 
             int num = sc.nextInt();
-
+            sc.nextLine();
             switch (num) {
-                case 1 :
-
-                    String name = sc.nextLine().trim();
-                    System.out.print("\n이름 : ");
-
-                    String password = sc.nextLine().trim();
-                    System.out.print("비밀번호 : ");
-
-                    String text = sc.nextLine().trim();
-                    System.out.print("내용 : ");
-
-                    input.inputMemo(textNum, name, password, text);
+                case 1:
+                    System.out.print("이름: ");
+                    String name = sc.nextLine();
+                    System.out.print("비밀번호: ");
+                    String password = sc.nextLine();
+                    System.out.print("내용: ");
+                    String text = sc.nextLine();
+                    input.inputMemo(textNum, name, password, text, formatedNow);
                     System.out.println();
+                    textNum++;
+                    break;
+                case 2:
                     input.printMemo();
                     break;
-                case 2 :
+                case 3:
                     break;
-                case 3 :
-                    break;
-                case 4 :
+                case 4:
                     break;
                 case 5:
                     System.out.println("종료합니다.\n");
                     break;
             }
-
 //            start = false;
         }
     }
