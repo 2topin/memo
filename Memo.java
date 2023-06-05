@@ -26,6 +26,10 @@ public class Memo {
         return text;
     }
 
+    public String getNow() {
+        return now;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -36,6 +40,10 @@ public class Memo {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public void setNow(String now) {
+        this.now = now;
     }
 
     public String toString() {

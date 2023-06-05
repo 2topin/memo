@@ -17,7 +17,7 @@ public class Input {
         }
     }
 
-    public void deleteText(int num) {
+    public void deleteText(int deleteNum) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("해당 글을 삭제하시겠습니까?");
@@ -25,7 +25,7 @@ public class Input {
         int confirm = sc.nextInt();
 
         if (confirm == 1) {
-            memoList.remove(num-1);
+            memoList.remove(deleteNum-1);
             System.out.println("삭제가 완료되었습니다.");
         } else if (confirm == 2) {
             System.out.println("메인으로 돌아갑니다.");
