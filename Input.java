@@ -10,9 +10,10 @@ public class Input {
         memoList.put(textNum, memo);
     }
 
-    public void printMemo() { // 번호 이름  비밀번호 등등
+
+    public void printMemo() {
         Set<Integer> keySet = memoList.keySet();
-        for (Integer key : keySet) { // 1. 이름, 비밀 2. 이름 비밀
+        for (Integer key : keySet) {
             System.out.println(key + " : " + memoList.get(key));
         }
     }

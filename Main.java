@@ -24,20 +24,19 @@ public class Main {
 
             switch (num) {
                 case 1 :
-                    String name = sc.nextLine();
+
+                    String name = sc.nextLine().trim();
                     System.out.print("\n이름 : ");
 
-                    String password = sc.nextLine();
+                    String password = sc.nextLine().trim();
                     System.out.print("비밀번호 : ");
 
-                    String text = sc.nextLine();
+                    String text = sc.nextLine().trim();
                     System.out.print("내용 : ");
-
 
                     input.inputMemo(textNum, name, password, text);
                     System.out.println();
                     input.printMemo();
-
                     break;
                 case 2 :
                     break;

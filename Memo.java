@@ -35,4 +35,3 @@ public class Memo {
     public void setText(String text) {
         this.text = text;
     }
-}
